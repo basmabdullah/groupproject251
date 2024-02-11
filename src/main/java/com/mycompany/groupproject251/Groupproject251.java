@@ -15,7 +15,8 @@ public class Groupproject251 {
         System.out.println("Hello my name is basma!");
         System.out.println("Hello, I am shahad");
         System.out.println("Hello, I am Leena");
-        System.out.println("Hello, I am Rafo");
+        System.out.println("Hello, I am Rafa");
+        
 
         
     }
