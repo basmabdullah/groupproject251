@@ -7,10 +7,43 @@ package com.mycompany.groupproject251;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import main.java.com.mycompany.groupproject251.Price;
 
 public class Groupproject251 {
     
     static ArrayList<Customer> Customers = new ArrayList<>();
+    
+    
+    
+    
+    
+     public static Price calcPrice(Scanner input){
+        System.out.println("enter the fabric");
+        String fabric = input.next(); 
+        System.out.println("enter your meters");
+        double meter = input.nextDouble(); 
+        System.out.println("enter the type");
+        String garment = input.next();
+        boolean isUrgent = false;
+         System.out.println("is the order urgent? yes=1/ no=2");
+         
+         int answer = input.nextInt();
+         if (answer == 1){
+            isUrgent = true; 
+         }
+        
+        Price price = new Price(fabric, meter,isUrgent, garment);
+        
+         
+         
+         return price;
+         
+     }
+    
+    
+    
+    
+    
     
     //method to display the required info to enter
     public static Customer addCustomerDisplay(Scanner input){
