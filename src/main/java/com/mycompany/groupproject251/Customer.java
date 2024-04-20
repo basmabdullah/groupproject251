@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.groupproject251;
+package main.java.com.mycompany.groupproject251;
 
 
 
@@ -28,8 +28,7 @@ public class Customer {
         //if he ordered 5 orders will get discount
         if (specialCustomer.getNumOfOrders()>4){
             double percent= price*0.15;
-            total = price+percent;
-            specialCustomer.setNumOfOrders(0);
+            total = price-percent;
         }
         return total;
     }

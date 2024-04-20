@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
 
-package com.mycompany.groupproject251;
+package main.java.com.mycompany.groupproject251;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -48,15 +48,15 @@ public class Groupproject251 {
     //method to display the required info to enter
     public static Customer addCustomerDisplay(Scanner input){
         //enter phone number
-        System.out.print("please enter customer phone number:");
-        String StrPhoneNumber=input.next();
+        System.out.print("Enter customer phone number: ");
+        String PhoneNumber1=input.next();
         //check phone
-        String phoneNumber= checkPhone(StrPhoneNumber, input);
+        String phoneNumber2= checkPhone(PhoneNumber1, input);
         //customer name
-        System.out.print("please enter customer name:");
+        System.out.print("Enter customer name: ");
         String CustomerName= input.next();
 
-        Customer customer = new Customer(phoneNumber, CustomerName);
+        Customer customer = new Customer(phoneNumber2, CustomerName);
         return customer;
     }
     
@@ -69,14 +69,14 @@ public class Groupproject251 {
     //method to search customer by his/her phone number
     public static Customer searchCustomer(Scanner input){
         //phone want to search
-        String StrPhoneNumber=input.next();
+        String PhoneNumber1=input.next();
         //check phone number
-        String PhoneNumber= checkPhone(StrPhoneNumber, input);
+        String PhoneNumber2= checkPhone(PhoneNumber1, input);
         
         Customer requiredCustomer = null;
         //search for customer
         for (int i=0; i<Customers.size(); i++){
-            if(Customers.get(i).getPhoneNumber().equals(PhoneNumber) && Customers.get(i)!=null){
+            if(Customers.get(i).getPhoneNumber().equals(PhoneNumber2) && Customers.get(i)!=null){
                 //if found
                 requiredCustomer=Customers.get(i);
                 return requiredCustomer;
@@ -88,17 +88,17 @@ public class Groupproject251 {
     
     //-----------------------
     //method to check phone number that satisfy the conditions
-    public static String checkPhone(String StrPhoneNumber, Scanner input){
+    public static String checkPhone(String PhoneNumber, Scanner input){
         //if phone number was wrong
-        while(StrPhoneNumber.length()!=10
-                || !(StrPhoneNumber.matches("\\d+")) 
-                || !(StrPhoneNumber.startsWith("05"))){
+        while(PhoneNumber.length()!=10
+                || !(PhoneNumber.matches("\\d+")) 
+                || !(PhoneNumber.startsWith("05"))){
             System.out.println("incorrect phone number! It should be 10 digits and not containning any charachters. Try Again.");
-            System.out.print("please enter customer phone number:");
-            StrPhoneNumber= input.next();
+            System.out.print("Enter customer phone number: ");
+            PhoneNumber= input.next();
             }
         //return phone
-        return StrPhoneNumber;
+        return PhoneNumber;
     }
 
     public static void main(String[] args) {
