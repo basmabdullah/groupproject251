@@ -32,7 +32,11 @@ public class Customer {
             specialCustomer.setNumOfOrders(0);
         }
         return total;
-        
+    }
+    
+    //if customer order new order
+    public void newOrder(){
+        setNumOfOrders(this.NumOfOrders++);
     }
 
     public String getPhoneNumber() {
