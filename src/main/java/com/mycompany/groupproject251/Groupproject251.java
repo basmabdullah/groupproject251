@@ -12,7 +12,7 @@ import main.java.com.mycompany.groupproject251.Price;
 public class Groupproject251 {
     
     static ArrayList<Customer> Customers = new ArrayList<>();
-    
+    static ArrayList<Order> Orders = new ArrayList<>();
     
     
     
@@ -46,7 +46,7 @@ public class Groupproject251 {
     
     
     //method to display the required info to enter
-    public static void addCustomerDisplay(Scanner input){
+    public static Customer addCustomerDisplay(Scanner input){
         //enter phone number
         System.out.print("Enter customer phone number: ");
         String PhoneNumber1=input.next();
@@ -59,7 +59,9 @@ public class Groupproject251 {
         Customer customer = new Customer(phoneNumber2, CustomerName);
         //add customer to Custoers arraylist
         Customers.add(customer);
+        return customer;
     }
+    
     
     
     //--------------------------------
@@ -103,7 +105,7 @@ public class Groupproject251 {
         
         
         //display adding Customer display and add customer to arraylist
-        addCustomerDisplay(input);
+        Customer newCustomer = addCustomerDisplay(input);
         //search customer command
         Customer searchedCustomer=searchCustomer(input);
         //if customer not found
@@ -112,7 +114,16 @@ public class Groupproject251 {
         else
             System.out.println(searchedCustomer.getName());
         
-
+        
+        Price price_details = calcPrice(input);
+        //total price
+        double TotalPrice = newCustomer.checkDiscount(newCustomer, price_details.getPrice());
+        
+        Order newOrder = new Order(TotalPrice, newCustomer, price_details);
+        //add order to array list
+        Orders.add(newOrder);
+        //print the invoicee
+        System.out.println(newOrder.toString());
         
     }
 }
