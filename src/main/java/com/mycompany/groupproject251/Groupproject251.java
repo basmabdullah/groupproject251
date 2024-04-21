@@ -46,7 +46,7 @@ public class Groupproject251 {
     
     
     //method to display the required info to enter
-    public static Customer addCustomerDisplay(Scanner input){
+    public static void addCustomerDisplay(Scanner input){
         //enter phone number
         System.out.print("Enter customer phone number: ");
         String PhoneNumber1=input.next();
@@ -57,14 +57,11 @@ public class Groupproject251 {
         String CustomerName= input.next();
 
         Customer customer = new Customer(phoneNumber2, CustomerName);
-        return customer;
-    }
-    
-    //--------------------------------
-    // method to add customer to arraylist
-    public static void addCustomer(Customer customer){
+        //add customer to Custoers arraylist
         Customers.add(customer);
     }
+    
+    
     //--------------------------------
     //method to search customer by his/her phone number
     public static Customer searchCustomer(Scanner input){
@@ -105,10 +102,8 @@ public class Groupproject251 {
         Scanner input = new Scanner(System.in);
         
         
-        //print add customer name and phone number
-        Customer newCustomer= addCustomerDisplay(input);
-        //add customer to arraylist
-        addCustomer(newCustomer);
+        //display adding Customer display and add customer to arraylist
+        addCustomerDisplay(input);
         //search customer command
         Customer searchedCustomer=searchCustomer(input);
         //if customer not found
