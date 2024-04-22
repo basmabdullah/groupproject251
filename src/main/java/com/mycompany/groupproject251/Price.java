@@ -44,6 +44,9 @@ public class Price {
         this.fabric = fabric;
     }
 
+    public String getGarment() {
+        return garment;
+    }
 
 
     public void setIsUrgent(boolean isUrgent) {
