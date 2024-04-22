@@ -53,7 +53,7 @@ public class Groupproject251 {
         //check phone
         String phoneNumber2= checkPhone(PhoneNumber1, input);
         //check if the customer a new one or an existed one:
-        Customer customer = searchCustomer(phoneNumber2, input);
+        Customer customer = searchCustomer(phoneNumber2, input); 
         //Customer customer = null;
         //if the customer is a new one
         if (customer == null){
@@ -66,6 +66,7 @@ public class Groupproject251 {
         Customers.add(customer);
         System.out.println("The customer is successfully added");
         }
+        customer.newOrder();
         return customer;
     }
 
@@ -129,6 +130,7 @@ public class Groupproject251 {
         Orders.add(newOrder);
         //print the invoicee
         System.out.println(newOrder.toString());
+
           
     }
 }
