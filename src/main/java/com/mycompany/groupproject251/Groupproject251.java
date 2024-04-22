@@ -52,16 +52,23 @@ public class Groupproject251 {
         String PhoneNumber1=input.next();
         //check phone
         String phoneNumber2= checkPhone(PhoneNumber1, input);
+        //check if the customer a new one or an existed one:
+        Customer customer = searchCustomer(phoneNumber2, input);
+        //Customer customer = null;
+        //if the customer is a new one
+        if (customer == null){
         //customer name
         System.out.print("Enter customer name: ");
         String CustomerName= input.next();
 
-        Customer customer = new Customer(phoneNumber2, CustomerName);
+        customer = new Customer(phoneNumber2, CustomerName);
         //add customer to Custoers arraylist
         Customers.add(customer);
+        System.out.println("The customer is successfully added");
+        }
         return customer;
     }
-    
+
     
     
     //--------------------------------
@@ -101,8 +108,7 @@ public class Groupproject251 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        
-        
+
         //display adding Customer display and add customer to arraylist
         Customer newCustomer = addCustomerDisplay(input);
         //search customer command
@@ -123,6 +129,6 @@ public class Groupproject251 {
         Orders.add(newOrder);
         //print the invoicee
         System.out.println(newOrder.toString());
-        
+          
     }
 }
