@@ -66,11 +66,10 @@ public class Groupproject251 {
     
     //--------------------------------
     //method to search customer by his/her phone number
-    public static Customer searchCustomer(Scanner input){
-        //phone want to search
-        String PhoneNumber1=input.next();
+    public static Customer searchCustomer(String phone, Scanner input){
+        
         //check phone number
-        String PhoneNumber2= checkPhone(PhoneNumber1, input);
+        String PhoneNumber2= checkPhone(phone, input);
         
         Customer requiredCustomer = null;
         //search for customer
@@ -107,7 +106,7 @@ public class Groupproject251 {
         //display adding Customer display and add customer to arraylist
         Customer newCustomer = addCustomerDisplay(input);
         //search customer command
-        Customer searchedCustomer=searchCustomer(input);
+        Customer searchedCustomer=searchCustomer("0512345678",input);
         //if customer not found
         if(searchedCustomer == null)
             System.out.println("Customer with phone number does not exist!");
