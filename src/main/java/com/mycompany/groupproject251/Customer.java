@@ -35,7 +35,7 @@ public class Customer {
     
     //if customer order new order
     public void newOrder(){
-        setNumOfOrders(this.NumOfOrders++);
+        setNumOfOrders(this.NumOfOrders+1);
     }
 
     public String getPhoneNumber() {
