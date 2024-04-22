@@ -26,7 +26,7 @@ public class Customer {
     public double checkDiscount(Customer specialCustomer ,Double price){
         double total = price;
         //if he ordered 5 orders will get discount
-        if (specialCustomer.getNumOfOrders()>4){
+        if (specialCustomer.getNumOfOrders()%5==0){
             double percent= price*0.15;
             total = price-percent;
         }
