@@ -109,16 +109,51 @@ public class Groupproject251 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        
+        System.out.println("        Welcome to Tailor Management system\n"
+                + "______________________________________________");
 
+        System.out.println("press1: if you want to add customer\n"
+                + "press2: \n"
+                + "press3: \n"
+                + "press4: \n"
+                + "press5: to exit from the system");
+        System.out.println("______________________________________________\n");
+        System.out.print("Enter your choice: ");
+        int choice = input.nextInt();
+        
+        do{
+            if(choice==1){
+                Customer newCustomer = addCustomerDisplay(input);
+            }
+            else if(choice==2){}
+            else if(choice==3){}
+            else if(choice==4){}
+            
+            System.out.println("______________________________________________");
+            System.out.print("Enter your choice: ");
+            System.out.println("press1: if you want to add customer\n"
+                + "press1: \n"
+                + "press2: \n"
+                + "press3: \n"
+                + "press4: \n"
+                + "press5: to exit from the system\n");
+        
+            System.out.print("Enter your choice: ");
+            choice=input.nextInt();
+        }while(choice!=5);
+        if(choice==5){
+            
+            System.out.println("Exist from system successfully!");
+            System.exit(0);
+        }
         //display adding Customer display and add customer to arraylist
         Customer newCustomer = addCustomerDisplay(input);
-        //search customer command
-        Customer searchedCustomer=searchCustomer("0512345678",input);
         //if customer not found
-        if(searchedCustomer == null)
-            System.out.println("Customer with phone number does not exist!");
-        else
-            System.out.println(searchedCustomer.getName());
+        //if(searchedCustomer == null)
+        //    System.out.println("Customer with phone number does not exist!");
+        //else
+        //    System.out.println(searchedCustomer.getName());
         
         
         Price price_details = calcPrice(input);
