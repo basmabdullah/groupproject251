@@ -24,7 +24,7 @@ public class Order {
         this.TotalPrice = TotalPrice;
         this.customer = customer;
         this.price = price;
-        //this.time = time;
+        //this.delivery_date = delivery_date;
     }
 
     //seter

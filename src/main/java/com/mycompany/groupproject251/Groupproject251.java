@@ -5,9 +5,12 @@
 
 package main.java.com.mycompany.groupproject251;
 
+import java.time.LocalDate;
+import static java.time.LocalDate.now;
 import java.util.Scanner;
 import java.util.ArrayList;
 import main.java.com.mycompany.groupproject251.Price;
+
 
 public class Groupproject251 {
     
@@ -79,10 +82,22 @@ public class Groupproject251 {
          return price;
          
      }
+//---------------------------Delivery Date--------------------------------
+    // function to enter the required parametrs for delivery date
+    public static Delivery_Date calcDate(Scanner input){
+        LocalDate orderDate = now();
+       System.out.println("Enter the Expected production date");
+       int expectedProduction_days =input.nextInt();
+       
+       Delivery_Date delivery_date = new Delivery_Date(orderDate,expectedProduction_days);
+       LocalDate date = delivery_date.CalculateDeliveryDate(orderDate,expectedProduction_days); //invoke calculateDeliveryDate method
+       System.out.println("The delivery date of this garment is "+ date);
+
+        return delivery_date;
+   
+    }
     
-    
-    
-    
+    //-----------------------------------------------------------------------
     
     
     //method to display the required info to enter
@@ -113,7 +128,7 @@ public class Groupproject251 {
     
     
     //--------------------------------
-    //method to search customer by his/her phone number
+    //method to search customer by their phone number
     public static Customer searchCustomer(String phone, Scanner input){
         
         //check phone number
@@ -156,7 +171,7 @@ public class Groupproject251 {
         System.out.println("press1: if you want to add customer\n"
                 + "press2: \n"
                 + "press3: \n"
-                + "press4: \n"
+                + "press4: if you want to calculate delivery date\n"
                 + "press5: to exit from the system");
         System.out.println("______________________________________________\n");
         System.out.print("Enter your choice: ");
@@ -168,7 +183,10 @@ public class Groupproject251 {
             }
             else if(choice==2){}
             else if(choice==3){}
-            else if(choice==4){}
+            else if(choice==4){
+                Delivery_Date delivery_date = calcDate(input);
+            
+            }
             
             System.out.println("______________________________________________");
             System.out.print("Enter your choice: ");
@@ -205,6 +223,8 @@ public class Groupproject251 {
         Orders.add(newOrder);
         //print the invoicee
         System.out.println(newOrder.toString());
+        
+        
 
           
     }
