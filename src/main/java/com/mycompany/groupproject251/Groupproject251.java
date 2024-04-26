@@ -18,14 +18,54 @@ public class Groupproject251 {
     
     
      public static Price calcPrice(Scanner input){
-        System.out.println("enter the fabric");
-        String fabric = input.next(); 
-        System.out.println("enter your meters");
+        System.out.println("Please choose what type of fabric you want by choosing their number."); 
+        System.out.println("Fabric Options:\n 1. Crepe\n 2. Polyester\n 3. Leather\n 4. Linen\n 5. Satin\n 6. Chiffon\n 7. Cotton\n 8. Denim\n 9. Silk\n 10. Tulle");
+        String fabric = null;
+        int choice;
+        boolean isValid = false;
+        do {
+            
+            choice = input.nextInt();
+            if (choice > 0 && choice < 11) {
+                isValid = true;
+            } else {
+                System.out.println("Invalid choice. Please enter a number between 1 and 10.");
+            }
+        
+        }  while (!isValid);
+        if (choice == 1) {
+            fabric = "Crepe";
+        } else if (choice == 2) {
+            System.out.println("You chose: Polyester");
+            fabric = "Polyester";
+        } else if (choice == 3) {
+            System.out.println("You chose: Leather");
+            fabric = "Leather";
+        } else if (choice == 4) {
+            fabric = "Linen";
+        } else if (choice == 5) {
+            fabric = "Satin";
+        } else if (choice == 6) {
+            fabric = "Chiffon";
+        } else if (choice == 7) {
+            fabric = "Cotton";
+        } else if (choice == 8) {
+            fabric = "Denim";
+        } else if (choice == 9) {
+            fabric = "Silk";
+        } else if (choice == 10) {
+            fabric = "Tulle";
+        } else {
+            System.out.println("Invalid choice. Please enter a number between 1 and 10.");
+        }
+        
+         
+        System.out.println("Please enter the meters");
         double meter = input.nextDouble(); 
-        System.out.println("enter the type");
+        System.out.println("Please enter the type of garment");
         String garment = input.next();
         boolean isUrgent = false;
-         System.out.println("is the order urgent? yes=1/ no=2");
+         System.out.println("Is the order urgent? yes=1/ no=2");
          
          int answer = input.nextInt();
          if (answer == 1){
