@@ -14,6 +14,12 @@ public class Customer {
     private String phoneNumber;
     private String name;
     private int NumOfOrders;
+    
+     public Customer() {
+        this.phoneNumber = "";
+        this.name = "";
+        this.NumOfOrders = 0;
+    }
 
     public Customer(String phoneNumber, String name) {
         this.phoneNumber = phoneNumber;
