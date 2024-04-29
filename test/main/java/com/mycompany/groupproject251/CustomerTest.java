@@ -57,15 +57,6 @@ public class CustomerTest {
         assertEquals(expResult, result, 0.0);
     }
 
-    /**
-     * Test of newOrder method, of class Customer.
-     */
-    @Test
-    public void testNewOrder() {
-        System.out.println("newOrder");
-        Customer instance = new Customer();
-        instance.newOrder();
-    }
 
     /**
      * Test of checkDiscount method, of class Customer.
@@ -86,6 +77,9 @@ public class CustomerTest {
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
     }
+
+
+
     }
 
     

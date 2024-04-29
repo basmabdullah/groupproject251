@@ -121,7 +121,7 @@ public class Groupproject251 {
         Customers.add(customer);
         System.out.println("The customer is successfully added");
         }
-        customer.newOrder();
+        customer.setNumOfOrders(customer.getNumOfOrders()+1);
         return customer;
     }
 
