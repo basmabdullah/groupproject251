@@ -84,7 +84,8 @@ public class Groupproject251 {
      }
 //---------------------------Delivery Date--------------------------------
     // function to enter the required parametrs for delivery date
-    public static Delivery_Date calcDate(Scanner input){
+     
+    public static  Delivery_Date calcDate(Scanner input){
         LocalDate orderDate = now();
        System.out.println("Enter the Expected production date");
        int expectedProduction_days =input.nextInt();
@@ -189,12 +190,12 @@ public class Groupproject251 {
             }
             
             System.out.println("______________________________________________");
-            System.out.print("Enter your choice: ");
+            System.out.print("Enter your choice: \n");
             System.out.println("press1: if you want to add customer\n"
                 + "press1: \n"
                 + "press2: \n"
                 + "press3: \n"
-                + "press4: \n"
+                + "press4: if you want to calculate delivery date\n"
                 + "press5: to exit from the system\n");
         
             System.out.print("Enter your choice: ");
