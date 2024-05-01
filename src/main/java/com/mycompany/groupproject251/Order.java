@@ -5,6 +5,7 @@
  */
 package main.java.com.mycompany.groupproject251;
 
+import java.time.LocalDate;
 
 
 /**
@@ -16,15 +17,16 @@ public class Order {
     private double TotalPrice;
     private Customer customer;
     private Price price;
-   // private DeliveryTime time;
-    
+    private Delivery_Date time;
+    //static ArrayList<Order> Orders = new ArrayList<>();
+  
     //constructer
-        public Order(double TotalPrice, Customer customer, Price price ) {
+        public Order(double TotalPrice, Customer customer, Price price, Delivery_Date time) {
         ++OrderID;
         this.TotalPrice = TotalPrice;
         this.customer = customer;
         this.price = price;
-        //this.delivery_date = delivery_date;
+        this.time = time;
     }
 
     //seter
@@ -45,9 +47,9 @@ public class Order {
         this.price = price;
     }
 
-   // public void setTime(DeliveryTime time) {
-  //      this.time = time;
-    //}
+    public void setTime(Delivery_Date time) {
+        this.time = time;
+    }
 
     //getter
     public double getTotalPrice() {
@@ -62,9 +64,9 @@ public class Order {
         return price;
     }
 
-  //  public DeliveryTime getTime() {
-    //    return time;
-   // }
+    public Delivery_Date getTime() {
+        return time;
+    }
 
 
     public int getOrderID() {
@@ -81,8 +83,8 @@ public class Order {
                "Customer Phone Number: " + customer.getPhoneNumber() + "\n" +
                "Garment Type:          " + price.getGarment() + "\n" +
                "Fabric Type:           " + price.getFabric() + "\n" +
-               "Total price:           " + customer.checkDiscount(customer, price.getPrice()) + "\n" //+
-                //"Delivery Time:         " deliveryTime.
+               "Total price:           " + customer.checkDiscount(customer, price.getPrice()) + "\n" +
+               "Delivery Time:         " + time.getDelivery_date() + "\n"
                 ;
     }
 
