@@ -170,7 +170,7 @@ public class Groupproject251 {
                 + "______________________________________________");
 
         System.out.println("press1: if you want to add customer\n"
-                + "press2: \n"
+                + "press2: if you want to calculate price \n"
                 + "press3: \n"
                 + "press4: if you want to calculate delivery date\n"
                 + "press5: to exit from the system");
@@ -182,7 +182,9 @@ public class Groupproject251 {
             if(choice==1){
                 Customer newCustomer = addCustomerDisplay(input);
             }
-            else if(choice==2){}
+            else if(choice==2){
+              Price price = calcPrice(input);
+            }
             else if(choice==3){}
             else if(choice==4){
                 Delivery_Date delivery_date = calcDate(input);

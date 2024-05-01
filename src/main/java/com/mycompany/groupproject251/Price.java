@@ -87,7 +87,7 @@ public class Price {
     
   
   
-  private int getFabricCost(){
+  public int getFabricCost(){
       int fCost = -1;
       String[][] Fabrics = new String[10][2];
       
