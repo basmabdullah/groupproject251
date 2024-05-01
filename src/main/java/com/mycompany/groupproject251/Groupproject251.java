@@ -165,7 +165,7 @@ public class Groupproject251 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        
+       /* 
         System.out.println("        Welcome to Tailor Management system\n"
                 + "______________________________________________");
 
@@ -177,20 +177,50 @@ public class Groupproject251 {
         System.out.println("______________________________________________\n");
         System.out.print("Enter your choice: ");
         int choice = input.nextInt();
+*/
+        int choice;
+        Customer newCustomer = null;
+        Order newOrder = null;
         
         do{
+            System.out.println("        Welcome to Tailor Management system\n"
+                + "______________________________________________");
+
+        System.out.println("press1: if you want to add customer\n"
+                + "press2: if you want to calculate price \n"
+                + "press3: if you want to calculate delivery date\n"
+                + "press4: if you want to make an order\n"
+                + "press5: to exit from the system");
+        System.out.println("______________________________________________\n");
+        System.out.print("Enter your choice: ");
+        choice = input.nextInt();
             if(choice==1){
-                Customer newCustomer = addCustomerDisplay(input);
+                 newCustomer = addCustomerDisplay(input);
             }
             else if(choice==2){
               Price price = calcPrice(input);
             }
-            else if(choice==3){}
+            else if(choice==3){
+            Delivery_Date delivery_date = calcDate(input);
+            }
             else if(choice==4){
+                newCustomer = addCustomerDisplay(input);
+                Price price_details = calcPrice(input);
+                //total price
+                double TotalPrice = newCustomer.checkDiscount(newCustomer, price_details.getPrice());
+
                 Delivery_Date delivery_date = calcDate(input);
+                newOrder = new Order(TotalPrice, newCustomer, price_details, delivery_date);
+                //add order to array list
+                Orders.add(newOrder);
+                //print the invoicee
+                System.out.println("______________________________________________\n");
+                System.out.println(newOrder.toString());
+                System.out.println("______________________________________________\n");
+                
             
             }
-            
+            /*
             System.out.println("______________________________________________");
             System.out.print("Enter your choice: \n");
             System.out.println("press1: if you want to add customer\n"
@@ -202,33 +232,19 @@ public class Groupproject251 {
         
             System.out.print("Enter your choice: ");
             choice=input.nextInt();
+*/
         }while(choice!=5);
         if(choice==5){
             
             System.out.println("Exist from system successfully!");
             System.exit(0);
         }
-        //display adding Customer display and add customer to arraylist
-        Customer newCustomer = addCustomerDisplay(input);
         //if customer not found
         //if(searchedCustomer == null)
         //    System.out.println("Customer with phone number does not exist!");
         //else
         //    System.out.println(searchedCustomer.getName());
         
-        
-        Price price_details = calcPrice(input);
-        //total price
-        double TotalPrice = newCustomer.checkDiscount(newCustomer, price_details.getPrice());
-        
-        Order newOrder = new Order(TotalPrice, newCustomer, price_details);
-        //add order to array list
-        Orders.add(newOrder);
-        //print the invoicee
-        System.out.println(newOrder.toString());
-        
-        
-
           
     }
 }
