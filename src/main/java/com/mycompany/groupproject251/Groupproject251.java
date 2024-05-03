@@ -165,26 +165,16 @@ public class Groupproject251 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-       /* 
-        System.out.println("        Welcome to Tailor Management system\n"
-                + "______________________________________________");
-
-        System.out.println("press1: if you want to add customer\n"
-                + "press2: if you want to calculate price \n"
-                + "press3: \n"
-                + "press4: if you want to calculate delivery date\n"
-                + "press5: to exit from the system");
-        System.out.println("______________________________________________\n");
-        System.out.print("Enter your choice: ");
-        int choice = input.nextInt();
-*/
+       
         int choice;
         Customer newCustomer = null;
         Order newOrder = null;
         
+        
+            System.out.println("        Welcome to Tailor Management system");
+        
         do{
-            System.out.println("        Welcome to Tailor Management system\n"
-                + "______________________________________________");
+            System.out.println("______________________________________________\n");
 
         System.out.println("press1: if you want to add customer\n"
                 + "press2: if you want to calculate price \n"
@@ -220,30 +210,12 @@ public class Groupproject251 {
                 
             
             }
-            /*
-            System.out.println("______________________________________________");
-            System.out.print("Enter your choice: \n");
-            System.out.println("press1: if you want to add customer\n"
-                + "press1: \n"
-                + "press2: \n"
-                + "press3: \n"
-                + "press4: if you want to calculate delivery date\n"
-                + "press5: to exit from the system\n");
-        
-            System.out.print("Enter your choice: ");
-            choice=input.nextInt();
-*/
         }while(choice!=5);
         if(choice==5){
             
             System.out.println("Exist from system successfully!");
             System.exit(0);
         }
-        //if customer not found
-        //if(searchedCustomer == null)
-        //    System.out.println("Customer with phone number does not exist!");
-        //else
-        //    System.out.println(searchedCustomer.getName());
         
           
     }
