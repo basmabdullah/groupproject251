@@ -39,10 +39,8 @@ public class Groupproject251 {
         if (choice == 1) {
             fabric = "Crepe";
         } else if (choice == 2) {
-            System.out.println("You chose: Polyester");
             fabric = "Polyester";
         } else if (choice == 3) {
-            System.out.println("You chose: Leather");
             fabric = "Leather";
         } else if (choice == 4) {
             fabric = "Linen";
@@ -62,11 +60,34 @@ public class Groupproject251 {
             System.out.println("Invalid choice. Please enter a number between 1 and 10.");
         }
         
-         
+        
+        
         System.out.println("Please enter the meters");
         double meter = input.nextDouble(); 
-        System.out.println("Please enter the type of garment");
-        String garment = input.next();
+        System.out.println("Please choose what type of garment you want by choosing their number.");
+        String garment = null ;
+         int Gchoice;
+        boolean GisValid = false;
+        System.out.println("garment Options:\n 1. skirt\n 2. blouse\n 3. dress");
+        do {
+            
+            Gchoice = input.nextInt();
+            if (Gchoice > 0 && choice < 4) {
+                GisValid = true;
+            } else {
+                System.out.println("Invalid choice. Please enter a number between 1 and 3.");
+            }
+        } while (!GisValid);
+        
+         
+         if (Gchoice == 1) {
+            garment = "skirt";
+        } else if (Gchoice == 2) {
+            garment = "blouse";
+        } else if (Gchoice == 3) {
+            garment = "dress";
+        }
+        
         boolean isUrgent = false;
          System.out.println("Is the order urgent? yes=1/ no=2");
          
@@ -75,7 +96,8 @@ public class Groupproject251 {
             isUrgent = true; 
          }
         
-        Price price = new Price(fabric, meter,isUrgent, garment);
+        Price price = new Price(fabric, meter,isUrgent, garment); 
+         System.out.println("The price is "+price.getPrice());
         
          
          
