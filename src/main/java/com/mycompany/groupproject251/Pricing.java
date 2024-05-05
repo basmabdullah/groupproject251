@@ -9,14 +9,14 @@ package main.java.com.mycompany.groupproject251;
  *
  * @author AHC
  */
-public class Price {
+public class Pricing {
        private String fabric;
     private boolean isUrgent = false;
     private double meter;
     private String garment;
 
     
-    public Price(String fabric,  double meter,boolean isUrgent,String garment) {
+    public Pricing(String fabric,  double meter,boolean isUrgent,String garment) {
         this.fabric = fabric;
         this.meter = meter;
         this.isUrgent=isUrgent;

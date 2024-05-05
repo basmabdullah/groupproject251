@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import static java.time.LocalDate.now;
 import java.util.Scanner;
 import java.util.ArrayList;
-import main.java.com.mycompany.groupproject251.Price;
+import main.java.com.mycompany.groupproject251.Pricing;
 
 
 public class Groupproject251 {
@@ -20,7 +20,7 @@ public class Groupproject251 {
     
     
     
-     public static Price calcPrice(Scanner input){
+     public static Pricing calcPrice(Scanner input){
         System.out.println("Please choose what type of fabric you want by choosing their number."); 
         System.out.println("Fabric Options:\n 1. Crepe\n 2. Polyester\n 3. Leather\n 4. Linen\n 5. Satin\n 6. Chiffon\n 7. Cotton\n 8. Denim\n 9. Silk\n 10. Tulle");
         String fabric = null;
@@ -96,7 +96,7 @@ public class Groupproject251 {
             isUrgent = true; 
          }
         
-        Price price = new Price(fabric, meter,isUrgent, garment); 
+        Pricing price = new Pricing(fabric, meter,isUrgent, garment); 
          System.out.println("The price is "+price.getPrice());
         
          
@@ -210,14 +210,14 @@ public class Groupproject251 {
                  newCustomer = addCustomerDisplay(input);
             }
             else if(choice==2){
-              Price price = calcPrice(input);
+              Pricing price = calcPrice(input);
             }
             else if(choice==3){
             Delivery_Date delivery_date = calcDate(input);
             }
             else if(choice==4){
                 newCustomer = addCustomerDisplay(input);
-                Price price_details = calcPrice(input);
+                Pricing price_details = calcPrice(input);
                 //total price
                 double TotalPrice = newCustomer.checkDiscount(newCustomer, price_details.getPrice());
 

@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
 public class OrderTest {
     public Order instance;
     public Delivery_Date time;
-    public Price price;
+    public Pricing price;
     public Customer customer;
     
     public OrderTest() {
@@ -39,7 +39,7 @@ public class OrderTest {
     public void setUp() {
         //instance = new Order(TotalPrice, newCustomer, price_details, delivery_date);
         customer = new Customer("0512345678", "shahad");
-        price = new Price("Crepe", 2.0, true, "dress");
+        price = new Pricing("Crepe", 2.0, true, "dress");
         time = new Delivery_Date(now(), 5);
         instance = new Order (1, customer, price, time);
     }

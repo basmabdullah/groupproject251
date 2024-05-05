@@ -16,12 +16,12 @@ public class Order {
     private static int OrderID =0;
     private double TotalPrice;
     private Customer customer;
-    private Price price;
+    private Pricing price;
     private Delivery_Date time;
     //static ArrayList<Order> Orders = new ArrayList<>();
   
     //constructer
-        public Order(double TotalPrice, Customer customer, Price price, Delivery_Date time) {
+        public Order(double TotalPrice, Customer customer, Pricing price, Delivery_Date time) {
         ++OrderID;
         this.TotalPrice = TotalPrice;
         this.customer = customer;
@@ -43,7 +43,7 @@ public class Order {
         this.customer = customer;
     }
 
-    public void setPrice(Price price) {
+    public void setPrice(Pricing price) {
         this.price = price;
     }
 
@@ -60,7 +60,7 @@ public class Order {
         return customer;
     }
 
-    public Price getPrice() {
+    public Pricing getPrice() {
         return price;
     }
 
