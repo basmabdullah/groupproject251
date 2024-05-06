@@ -80,6 +80,7 @@ public class Groupproject251 {
         } while (!GisValid);
         
          
+        
          if (Gchoice == 1) {
             garment = "skirt";
         } else if (Gchoice == 2) {
