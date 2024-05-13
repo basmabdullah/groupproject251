@@ -56,19 +56,19 @@ public class OrderTest {
      * Test of toString method, of class Order.
      */
     @Test
-    public void testToString() {
+    public void testInvoice() {
        LocalDate orderDate = now();
         System.out.println("toString");
         
         String expResult = "             Invoice        \n";
-        expResult += "Order ID:              1\n";
+        expResult += "Order ID:              2\n";
         expResult += "Customer Name:         shahad\n";
         expResult += "Customer Phone Number: 0512345678\n";
         expResult += "Garment Type:          dress\n";
         expResult += "Fabric Type:           Crepe\n";
         expResult += "Total price:           234.6\n";
         expResult += "Delivery Time:         null\n";
-        String result = instance.toString();
+        String result = instance.Invoice();
         assertEquals(expResult, result);
         
     }
@@ -78,7 +78,7 @@ public class OrderTest {
      * Test of toString method, of class Order.
      */
     @Test
-    public void testToStringNull() {
+    public void testInvoiceNull() {
        LocalDate orderDate = now();
         System.out.println("toString");
         
@@ -90,7 +90,7 @@ public class OrderTest {
         expResult += "Fabric Type:           Crepe\n";
         expResult += "Total price:           234.6\n";
         expResult += "Delivery Time:         null\n";
-        String result = instance.toString();
+        String result = instance.Invoice();
         assertNotNull(expResult);
         
     }

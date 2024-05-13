@@ -75,8 +75,7 @@ public class Order {
 
  
     //to string method
-    @Override
-    public String toString() {
+    public String Invoice() {
         return "             Invoice        " + "\n" +
                "Order ID:              " + OrderID + "\n" + 
                "Customer Name:         " + customer.getName() + "\n" + 

@@ -228,7 +228,7 @@ public class Groupproject251 {
                 Orders.add(newOrder);
                 //print the invoicee
                 System.out.println("______________________________________________\n");
-                System.out.println(newOrder.toString());
+                System.out.println(newOrder.Invoice());
                 System.out.println("______________________________________________\n");
                 
             
